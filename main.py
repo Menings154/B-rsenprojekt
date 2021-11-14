@@ -27,7 +27,7 @@ for ticker in dic_crv.keys():
 links = []
 for count, name in enumerate(crv_names):
     links.append([])
-    for j in search(name, num_results=5, stop=5, pause=2):
+    for j in search(term=name, num_results=5):
         links[count].append(j)
 
 body = f'Here are todays recomendations:\r'
