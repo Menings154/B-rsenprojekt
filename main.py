@@ -32,7 +32,7 @@ for count, name in enumerate(crv_names):
 
 body = f'Here are todays recomendations:\r'
 for count, name in enumerate(crv_names):
-    body += f'{name}: CRV = {dic_crv[data.tickers[count]]}\r'
+    body += f'{name}: CRV = {dic_crv[sandb.tickers[count]]}\r'
     for i in links[count]:
         body += f'{i}\r'
 body += '\r'
