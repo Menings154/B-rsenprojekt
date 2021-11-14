@@ -8,7 +8,7 @@ sandp = Sandp500()
 sandp.scrap_tickers()
 
 dic_crv = {}
-for ticker in data.tickers:
+for ticker in sandp.tickers:
     try:
         df = sandp.load_stock(ticker)
         crv = sandp.calculate_crv(df)
