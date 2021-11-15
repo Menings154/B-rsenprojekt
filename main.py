@@ -4,9 +4,12 @@ from googlesearch import search
 import requests
 from bs4 import BeautifulSoup
 
+print('Start')
+# load the different indexes and scrap for tickers to later iterate over the tickers
 sandp = Sandp500()
 sandp.scrap_tickers()
 
+# calculate crv of sandp-index and make a dictionary which includes all stockes with crv > 3
 dic_crv = {}
 for ticker in sandp.tickers:
     try:
@@ -23,16 +26,16 @@ for ticker in dic_crv.keys():
     crv_names.append(sandp.names[index])
 
 # Ersten 5 Googleergebnisse als links speichern und dann per Email senden
-
 links = []
 for count, name in enumerate(crv_names):
     links.append([])
     for j in search(term=name, num_results=5):
         links[count].append(j)
 
+# Write the mail
 body = f'Here are todays recomendations:\r'
 for count, name in enumerate(crv_names):
-    body += f'{name}: CRV = {dic_crv[sandb.tickers[count]]}\r'
+    body += f'{name}: CRV = {dic_crv[dic_crv.keys()[count]]}\r'
     for i in links[count]:
         body += f'{i}\r'
 body += '\r'
