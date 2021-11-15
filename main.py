@@ -43,4 +43,4 @@ for count, name in enumerate(crv_names):
 body += '\r'
 body += 'Hope the mail is useful!'
 
-data.send_mail(email='zenz.finanzen@gmail.com', subject='Good stocks', body=body)
+sandp.send_mail(email='zenz.finanzen@gmail.com', subject='Good stocks', body=body)
